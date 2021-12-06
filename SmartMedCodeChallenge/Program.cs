@@ -11,9 +11,10 @@ builder.Services.AddEndpointsApiExplorer();
 //'Homepage', description of different api calls.
 var app = builder.Build();
 app.MapGet("/", () => @"List of paths for api calls: 
-/api/getmedicines - returns a list of all created medicines (GET)
-/api/createmedicine - takes a json object containing a name, dateCreated and quantity - creates the passed medicine object (POST)
-/api/deletemedicine/{id} - takes a medicine Id in the url, deletes the associated medicine (POST)
+/api/v1/medicines/getall - returns a list of all created medicines (GET)
+/api/v1/medicines/get/{id} - returns a specified medicine (GET)
+/api/v1/medicines/add - takes a json object containing a name, dateCreated and quantity - creates the passed medicine object (POST)
+/api/v1/medicines/delete/{id} - takes a medicine Id in the url, deletes the associated medicine (POST)
 
 For testing purposes I used postman to create and delete the medicines.");
 

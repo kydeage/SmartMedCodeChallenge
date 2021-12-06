@@ -10,7 +10,7 @@ using SmartMedCodeChallenge.Models;
 
 namespace SmartMedCodeChallenge.Controllers.v1
 {
-    [Route("api/v1/[Controller]")]
+    [Route("api/v1/medicines")]
     [ApiController]
     public class MedicinesController : ControllerBase, IContext<Medicine>
     {
@@ -59,7 +59,7 @@ namespace SmartMedCodeChallenge.Controllers.v1
             return CreatedAtAction(nameof(GetAll), new { id = medicine.Id }, medicine);
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("delete/{id}")]
         //Removes a medicine object from the database context
         public async Task<IActionResult> Delete(long id)
